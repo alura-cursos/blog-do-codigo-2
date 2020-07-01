@@ -2,7 +2,7 @@ const Usuario = require('./usuarios-modelo');
 const { InvalidArgumentError } = require('../erros');
 
 const jwt = require('jsonwebtoken');
-const blocklist = require('../../redis/manipula-blocklist');
+const blocklist = require('../../redis/blocklist-access-token');
 const allowlistRefreshToken = require('../../redis/allowlist-refresh-token');
 
 const crypto = require('crypto');
