@@ -1,6 +1,6 @@
 const passport = require('passport');
 const Usuario = require('./usuarios-modelo');
-const {InvalidArgumentError} = require('../erros');
+const { InvalidArgumentError } = require('../erros');
 const allowlistRefreshToken = require('../../redis/allowlist-refresh-token');
 
 async function verificaRefreshToken(refreshToken) {
@@ -81,9 +81,9 @@ module.exports = {
       return next();
     } catch (erro) {
       if (erro.name === 'InvalidArgumentError') {
-        return res.status(401).json({erro: erro.message});
+        return res.status(401).json({ erro: erro.message });
       }
-      return res.status(500).json({erro: erro.message});
+      return res.status(500).json({ erro: erro.message });
     }
   },
 };
